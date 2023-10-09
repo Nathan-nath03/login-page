@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div id="square">
+<div class="front">
+    <h1>Login</h1>
+    <form action="#" method="POST">
+<input 
+required 
+type="email" 
+name="email" 
+id="email" 
+placeholder="email"
+/>
+<input 
+required
+type="password" 
+name="password" 
+id="password" 
+placeholder="password"
+/>
+<button type="submit">Submit</button>
+    </form>
+</div>
+<div class="right">
+    <h1>Create a new account</h1>
+    <form action="#" method="POST">
+<input required 
+type="email" 
+name="email" 
+id="email"
+placeholder="email"
+/>
+<input required 
+type="text"
+name="FullName" 
+ id="FullName"
+placeholder="Full name"
+/>
+<input 
+type="password" 
+name="password" 
+id="password" 
+placeholder="password"
+/>
+<button type="submit">Submit</button>
+    </form>
+</div>
+<div class="left">
+    <h1>Add your email to reset password</h1>
+    <form action="#" method="POST">
+<input required
+ type="email" 
+ name="email"
+ id="email"
+placeholder="email"
+/>
+<button type="submit">Submit</button>
+    </form>
+</div>
+            </div>
+            <div class="actions">
+                <button id="leftside" type="button">Forget Password</button>
+                <button id="frontside" type="button">Login</button>
+                <button id="rightside" type="button">Sign Up</button>
+        </div>
+        </div>
+    </div>
+    <script>
+const square = document.getElementById("square");
+const frontside = document.getElementById("frontside");
+const leftside = document.getElementById("leftside");
+const rightside = document.getElementById("rightside");
+
+frontside.addEventListener('click',() =>{
+    frontside.style.display = "none";
+    leftside.style.display = "block";
+    rightside.style.display = "block";
+    square.style.transform = "rotate3d(0,0,0,90deg)";
+    document.title = "Login Page";
+});
+
+rightside.addEventListener('click',() =>{
+    frontside.style.display = "none";
+    leftside.style.display = "block";
+    rightside.style.display = "block";
+    square.style.transform = "rotate3d(0,-1,0,90deg)";
+    document.title = "Sign page";
+});
+
+leftside.addEventListener('click',() =>{
+    frontside.style.display = "block";
+    leftside.style.display = "none";
+    rightside.style.display = "block";
+    square.style.transform = "rotate3d(0,1,0,90deg)";
+    document.title = "Forget password page";
+});
+    </script>
+</body>
+</html>
